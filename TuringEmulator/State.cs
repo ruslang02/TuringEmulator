@@ -1,19 +1,26 @@
 ﻿using System;
 using System.IO;
+using System.Runtime.Serialization;
 using System.Runtime.Serialization.Formatters.Binary;
 using System.Text;
 
 namespace TuringEmulator
 {
     [Serializable]
+    [DataContract]
     public class State
     {
-        public char[] Chars;
+        [DataMember(Name = "Alphabet")]
+        public char[] Alphabet;
+        [DataMember(Name = "Instructions")]
         public Instruction[] Instructions;
-        //public Instruction CurrentInstruction => Instructions.Single(i => i.Active);
+        [DataMember(Name = "CurrentTape")]
         public DataArray Data;
+        [DataMember(Name = "StartTape")]
         public DataArray StartData;
+        [DataMember]
         public int Step { get; set; } = 0;
+        [DataMember]
         public int TotalSteps { get; set; } = 0;
 
         public void SaveToFile(string file)
@@ -24,15 +31,6 @@ namespace TuringEmulator
                 format.Serialize(fs, this);
             }
         }
-        public State ShallowCopy()
-        {
-            State newState = new State();
-            newState.Chars = Chars;
-            newState.Instructions = new Instruction[Instructions.Length];
-            Array.Copy(Instructions, 0, newState.Instructions, 0, Instructions.Length);
-            newState.Data = new DataArray(Data.ToString());
-            return newState;
-        }
         public void LoadFromFile(string file)
         {
             using (FileStream fs = new FileStream(file, FileMode.Open))
@@ -40,7 +38,10 @@ namespace TuringEmulator
                 BinaryFormatter format = new BinaryFormatter();
                 State dreamstate = (State)format.Deserialize(fs);
                 this.Data = dreamstate.Data;
-                this.Chars = dreamstate.Chars;
+                this.StartData = dreamstate.StartData;
+                this.Step = dreamstate.Step;
+                this.TotalSteps = dreamstate.TotalSteps;
+                this.Alphabet = dreamstate.Alphabet;
                 this.Instructions = dreamstate.Instructions;
             }
         }

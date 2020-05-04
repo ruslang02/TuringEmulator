@@ -1,33 +1,54 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Windows.Forms;
+using System.Runtime.Serialization;
 
 namespace TuringEmulator
 {
     [Serializable]
+    [DataContract]
     public class DataArray
     {
         public DataArray(string s)
         {
-            if (s.Contains("&"))
-            {
-                CurrentPosition = s.IndexOf("&");
-                s = s.Replace("&", "");
-            }
-            else CurrentPosition = 0;
-            positives = s.ToCharArray();
-            if (positives.Length < 10)
-                Array.Resize(ref positives, 10);
+            Symbols = s;
         }
+        public DataArray() { }
         private int currentPos = 0;
-        public int CurrentPosition {
+        [DataMember(Name = "CurrentPosition")]
+        public int CurrentPosition
+        {
             get => currentPos;
-            set {
+            set
+            {
                 PreviousPosition = currentPos;
                 currentPos = value;
             }
         }
+        [DataMember(Name = "PreviousPosition")]
         public int PreviousPosition { get; set; }
+        [DataMember(Name = "Alphabet")]
+        public string Symbols
+        {
+            get
+            {
+                string result = "";
+                foreach (char chr in Elements)
+                    result += chr == '\0' ? '_' : chr;
+                return result;
+            }
+            set
+            {
+                if (value.Contains("&"))
+                {
+                    CurrentPosition = value.IndexOf("&");
+                    value = value.Replace("&", "");
+                }
+                else CurrentPosition = 0;
+                positives = value.ToCharArray();
+                if (positives.Length < 10)
+                    Array.Resize(ref positives, 10);
+            }
+        }
         private char[] positives = new char[10];
         private char[] negatives = new char[10];
         public int Count
