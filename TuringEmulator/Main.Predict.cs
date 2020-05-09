@@ -40,8 +40,8 @@ namespace TuringEmulator
             Button inputWordIcon = new Button()
             {
                 Image = Properties.Resources.textbox_password,
-                Width = 40,
-                Height = 40,
+                Width = 45,
+                Height = 45,
                 FlatStyle = FlatStyle.Popup
             };
 
@@ -109,8 +109,8 @@ namespace TuringEmulator
                     {
                         Text = i.ToString(),
                         Font = new Font(this.Font.FontFamily, 10, FontStyle.Bold),
-                        Width = 40,
-                        Height = 40,
+                        Width = 45,
+                        Height = 45,
                         FlatStyle = FlatStyle.Popup
                     };
 

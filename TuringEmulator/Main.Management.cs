@@ -32,7 +32,6 @@ namespace TuringEmulator
             currentState.Instructions = currentState.Instructions.Append(emptyInstruction).ToArray<Instruction>();
             Predict();
         }
-
         private void NewSymbolButton_Click(object sender, EventArgs e)
         {
             char newChar = GenerateSymbolName();
@@ -56,7 +55,6 @@ namespace TuringEmulator
             currentState.Instructions = currentState.Instructions.Where(i => i.Name != instName).ToArray();
             Predict();
         }
-
         private void DeleteSymbolButton_Click(object sender, EventArgs e)
         {
             if (Table.SelectedCells.Count == 0)

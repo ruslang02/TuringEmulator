@@ -4,15 +4,19 @@ using System.Runtime.Serialization;
 
 namespace TuringEmulator
 {
+    /// <summary>
+    /// Represents an array of symbols with some extended functionality.
+    /// </summary>
     [Serializable]
     [DataContract]
     public class DataArray
     {
-        public DataArray(string s)
-        {
-            Symbols = s;
-        }
+        public DataArray(string s) => Symbols = s;
         public DataArray() { }
+
+        /// <summary>
+        /// Current cursor's position.
+        /// </summary>
         private int currentPos = 0;
         [DataMember(Name = "CurrentPosition")]
         public int CurrentPosition
@@ -24,9 +28,15 @@ namespace TuringEmulator
                 currentPos = value;
             }
         }
+        /// <summary>
+        /// Previous cursor's position.
+        /// </summary>
         [DataMember(Name = "PreviousPosition")]
         public int PreviousPosition { get; set; }
-        [DataMember(Name = "Alphabet")]
+        /// <summary>
+        /// String representation of symbols on the tape.
+        /// </summary>
+        [DataMember(Name = "Symbols")]
         public string Symbols
         {
             get
@@ -51,12 +61,12 @@ namespace TuringEmulator
         }
         private char[] positives = new char[10];
         private char[] negatives = new char[10];
-        public int Count
-        {
-            get => positives.Length + negatives.Length;
-        }
+        public int Count => positives.Length + negatives.Length;
         public int NegativeCount => negatives.Length;
         public int PositiveCount => positives.Length;
+        /// <summary>
+        /// Array of char representation of symbols on the tape.
+        /// </summary>
         public char[] Elements
         {
             get
@@ -68,7 +78,9 @@ namespace TuringEmulator
                 return elements;
             }
         }
-
+        /// <summary>
+        /// Symbol that is currently selected by the cursor.
+        /// </summary>
         public char Current
         {
             get
@@ -81,7 +93,6 @@ namespace TuringEmulator
                 this[currentPos] = value == '_' ? '\0' : value;
             }
         }
-
         public override string ToString()
         {
             List<char> converted = new List<char>();
@@ -121,13 +132,9 @@ namespace TuringEmulator
                     Array.Resize(ref negatives, Math.Abs(index) * 2);
 
                 if (index < 0)
-                {
                     negatives[-(index + 1)] = value;
-                }
                 else
-                {
                     positives[index] = value;
-                }
             }
         }
     }

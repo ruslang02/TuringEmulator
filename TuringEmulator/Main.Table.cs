@@ -202,6 +202,5 @@ namespace TuringEmulator
                 EditPanel_LostFocus(sender, EventArgs.Empty);
             }
         }
-
     }
 }

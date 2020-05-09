@@ -31,6 +31,7 @@
             this.components = new System.ComponentModel.Container();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MainForm));
             this.HeaderMenu = new System.Windows.Forms.MenuStrip();
             this.FileMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.LoadStateMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -76,6 +77,9 @@
             this.LoadStateDialog = new System.Windows.Forms.OpenFileDialog();
             this.SaveStateDialog = new System.Windows.Forms.SaveFileDialog();
             this.JSONSaveDialog = new System.Windows.Forms.SaveFileDialog();
+            this.какПользоватьсяToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.теорияToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.toolStripSeparator1 = new System.Windows.Forms.ToolStripSeparator();
             this.HeaderMenu.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.Table)).BeginInit();
             this.tableLayoutPanel1.SuspendLayout();
@@ -158,6 +162,9 @@
             // HelpMenuItem
             // 
             this.HelpMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.теорияToolStripMenuItem,
+            this.какПользоватьсяToolStripMenuItem,
+            this.toolStripSeparator1,
             this.AboutAppMenuItem});
             this.HelpMenuItem.Name = "HelpMenuItem";
             this.HelpMenuItem.Size = new System.Drawing.Size(65, 20);
@@ -166,7 +173,7 @@
             // AboutAppMenuItem
             // 
             this.AboutAppMenuItem.Name = "AboutAppMenuItem";
-            this.AboutAppMenuItem.Size = new System.Drawing.Size(158, 22);
+            this.AboutAppMenuItem.Size = new System.Drawing.Size(180, 22);
             this.AboutAppMenuItem.Text = "О программе...";
             this.AboutAppMenuItem.Click += new System.EventHandler(this.AboutApp_Click);
             // 
@@ -573,6 +580,23 @@
             this.JSONSaveDialog.Filter = "JSON файл|*.json";
             this.JSONSaveDialog.FileOk += new System.ComponentModel.CancelEventHandler(this.JSONSaveDialog_Select);
             // 
+            // какПользоватьсяToolStripMenuItem
+            // 
+            this.какПользоватьсяToolStripMenuItem.Name = "какПользоватьсяToolStripMenuItem";
+            this.какПользоватьсяToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.какПользоватьсяToolStripMenuItem.Text = "Как пользоваться?";
+            // 
+            // теорияToolStripMenuItem
+            // 
+            this.теорияToolStripMenuItem.Name = "теорияToolStripMenuItem";
+            this.теорияToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.теорияToolStripMenuItem.Text = "Теория";
+            // 
+            // toolStripSeparator1
+            // 
+            this.toolStripSeparator1.Name = "toolStripSeparator1";
+            this.toolStripSeparator1.Size = new System.Drawing.Size(177, 6);
+            // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -584,6 +608,7 @@
             this.Controls.Add(this.StatusBar);
             this.Controls.Add(this.ToolBar);
             this.Controls.Add(this.HeaderMenu);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MainMenuStrip = this.HeaderMenu;
             this.MinimumSize = new System.Drawing.Size(750, 450);
             this.Name = "MainForm";
@@ -660,6 +685,9 @@
         private System.Windows.Forms.OpenFileDialog LoadStateDialog;
         private System.Windows.Forms.SaveFileDialog SaveStateDialog;
         private System.Windows.Forms.SaveFileDialog JSONSaveDialog;
+        private System.Windows.Forms.ToolStripMenuItem теорияToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem какПользоватьсяToolStripMenuItem;
+        private System.Windows.Forms.ToolStripSeparator toolStripSeparator1;
     }
 }
 

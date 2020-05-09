@@ -12,7 +12,7 @@ namespace TuringEmulator
 {
     public partial class MainForm : Form
     {
-        const int MAX_STEPS = 99;
+        const int MAX_STEPS = 200;
         State currentState;
 
         DataTable InstructionsTable { get; } = new DataTable("Instructions");
@@ -26,7 +26,7 @@ namespace TuringEmulator
         /// <summary>
         /// Launches the app with some default data.
         /// </summary>
-        private void EmptyLaunch()
+        public void EmptyLaunch()
         {
             char[] chars = new char[] { '\0', '0', '1' };
             Instruction Inst_A = new Instruction() { Name = "A", Start = true };
@@ -105,6 +105,7 @@ namespace TuringEmulator
                 CurrentStepLabel.Text = $"Шаг: {currentState.Step}/{currentState.TotalSteps}";
                 HighlightCurrentStep();
                 button.Tag = "play";
+                CurrentStateLabel.Text = "Нажмите \"Запуск\", чтобы начать исполнение.";
             }
         }
 
@@ -263,7 +264,7 @@ namespace TuringEmulator
         private void LoadStateDialog_Select(object sender, System.ComponentModel.CancelEventArgs e)
             => LoadAppFile(LoadStateDialog.FileName);
 
-        private void LoadAppFile(string filename)
+        public void LoadAppFile(string filename)
         {
             if (currentState == null)
                 try
@@ -287,6 +288,7 @@ namespace TuringEmulator
             for (int i = 0; i < step; i++)
                 fileFormat.Deserialize(StateBuffer);
             NextStep();
+            CurrentStateLabel.Text = "Нажмите \"Запуск\", чтобы начать исполнение.";
         }
         private void SaveStateDialog_Select(object sender, System.ComponentModel.CancelEventArgs e)
             => currentState.SaveToFile(SaveStateDialog.FileName);
@@ -320,14 +322,6 @@ namespace TuringEmulator
 
         private void MainForm_Load(object sender, EventArgs e)
         {
-
-            if (File.Exists("saved.emt"))
-                if (MessageBox.Show("Загрузить сохраненное состояние?", "Найдено сохраненное состояние", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
-                {
-                    LoadAppFile("saved.emt");
-                    return;
-                }
-            EmptyLaunch();
             ExecTimerSelector.SelectedIndex = 1;
         }
 
