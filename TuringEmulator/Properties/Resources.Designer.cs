@@ -61,6 +61,15 @@ namespace TuringEmulator.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to .
+        /// </summary>
+        internal static string HowTo_html {
+            get {
+                return ResourceManager.GetString("HowTo.html", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
         internal static System.Drawing.Bitmap minus_circle_outline {

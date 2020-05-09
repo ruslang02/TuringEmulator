@@ -331,5 +331,17 @@ namespace TuringEmulator
             double delay = 500 + 1125 * x - 1187.5 * x * x + 625 * x * x * x - 62.5 * x * x * x * x;
             ExecTimer.Interval = (int)delay;
         }
+
+        private void HowToUseItem_Click(object sender, EventArgs e)
+        {
+            new WebView().ShowDialog();
+        }
+
+        private void TheoryItem_Click(object sender, EventArgs e)
+        {
+            WebView form = new WebView();
+            form.LoadTheory();
+            form.ShowDialog();
+        }
     }
 }

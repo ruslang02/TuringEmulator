@@ -41,6 +41,9 @@
             this.toolStripSeparator2 = new System.Windows.Forms.ToolStripSeparator();
             this.ExitMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.HelpMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.теорияToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.какПользоватьсяToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.toolStripSeparator1 = new System.Windows.Forms.ToolStripSeparator();
             this.AboutAppMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.Table = new System.Windows.Forms.DataGridView();
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
@@ -77,9 +80,6 @@
             this.LoadStateDialog = new System.Windows.Forms.OpenFileDialog();
             this.SaveStateDialog = new System.Windows.Forms.SaveFileDialog();
             this.JSONSaveDialog = new System.Windows.Forms.SaveFileDialog();
-            this.какПользоватьсяToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.теорияToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.toolStripSeparator1 = new System.Windows.Forms.ToolStripSeparator();
             this.HeaderMenu.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.Table)).BeginInit();
             this.tableLayoutPanel1.SuspendLayout();
@@ -169,6 +169,25 @@
             this.HelpMenuItem.Name = "HelpMenuItem";
             this.HelpMenuItem.Size = new System.Drawing.Size(65, 20);
             this.HelpMenuItem.Text = "&Справка";
+            // 
+            // теорияToolStripMenuItem
+            // 
+            this.теорияToolStripMenuItem.Name = "теорияToolStripMenuItem";
+            this.теорияToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.теорияToolStripMenuItem.Text = "Теория";
+            this.теорияToolStripMenuItem.Click += new System.EventHandler(this.TheoryItem_Click);
+            // 
+            // какПользоватьсяToolStripMenuItem
+            // 
+            this.какПользоватьсяToolStripMenuItem.Name = "какПользоватьсяToolStripMenuItem";
+            this.какПользоватьсяToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.какПользоватьсяToolStripMenuItem.Text = "Как пользоваться?";
+            this.какПользоватьсяToolStripMenuItem.Click += new System.EventHandler(this.HowToUseItem_Click);
+            // 
+            // toolStripSeparator1
+            // 
+            this.toolStripSeparator1.Name = "toolStripSeparator1";
+            this.toolStripSeparator1.Size = new System.Drawing.Size(177, 6);
             // 
             // AboutAppMenuItem
             // 
@@ -579,23 +598,6 @@
             this.JSONSaveDialog.FileName = "states.json";
             this.JSONSaveDialog.Filter = "JSON файл|*.json";
             this.JSONSaveDialog.FileOk += new System.ComponentModel.CancelEventHandler(this.JSONSaveDialog_Select);
-            // 
-            // какПользоватьсяToolStripMenuItem
-            // 
-            this.какПользоватьсяToolStripMenuItem.Name = "какПользоватьсяToolStripMenuItem";
-            this.какПользоватьсяToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
-            this.какПользоватьсяToolStripMenuItem.Text = "Как пользоваться?";
-            // 
-            // теорияToolStripMenuItem
-            // 
-            this.теорияToolStripMenuItem.Name = "теорияToolStripMenuItem";
-            this.теорияToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
-            this.теорияToolStripMenuItem.Text = "Теория";
-            // 
-            // toolStripSeparator1
-            // 
-            this.toolStripSeparator1.Name = "toolStripSeparator1";
-            this.toolStripSeparator1.Size = new System.Drawing.Size(177, 6);
             // 
             // MainForm
             // 
