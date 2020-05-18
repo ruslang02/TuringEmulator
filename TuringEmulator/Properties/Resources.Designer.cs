@@ -61,7 +61,17 @@ namespace TuringEmulator.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to .
+        ///   Looks up a localized string similar to &lt;!DOCTYPE html&gt;
+        ///&lt;html&gt;
+        ///	&lt;head&gt;
+        ///		&lt;meta charset=&quot;utf-8&quot; /&gt;
+        ///	&lt;/head&gt;
+        ///	&lt;body&gt;
+        ///	&lt;p&gt;
+        ///&lt;b&gt;Функции&lt;/b&gt;&lt;br /&gt;
+        ///		В программе реализована полноценная система для гибкого редактирования алгоритма и его операций. Присутствуют следующие функции:&lt;br /&gt;
+        ///–	Добавление состояния по нажатии «Добавить...» и «Новое состояние»;&lt;br /&gt;
+        ///–	Изменение состояния путем редактирования значений в ячейках в таблице состояний, где первый столбец – идентификатор состояния, а последующие столбцы – операции при нахождении определенног [rest of string was truncated]&quot;;.
         /// </summary>
         internal static string HowTo_html {
             get {
@@ -196,6 +206,26 @@ namespace TuringEmulator.Properties {
             get {
                 object obj = ResourceManager.GetObject("textbox_password", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to &lt;!DOCTYPE html&gt;&lt;!--[if IE]&gt;  &lt;html class=&quot;ie&quot;&gt; &lt;![endif]--&gt;
+        ///&lt;html&gt;
+        ///	&lt;head&gt;
+        ///		&lt;meta charset=&quot;utf-8&quot; /&gt;
+        ///		&lt;title&gt;
+        ///		&lt;/title&gt;
+        ///		&lt;link rel=&quot;stylesheet&quot; type=&quot;text/css&quot; href=&quot;theory_files/style.css&quot; /&gt;
+        ///	&lt;/head&gt;
+        ///	&lt;body&gt;
+        ///		&lt;div class=&quot;stl_02&quot;&gt;
+        ///			&lt;div class=&quot;stl_03&quot;&gt;
+        ///				&lt;img src=&quot;data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHhtbG5zOnhsaW5rPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5L3hsaW5rIiBpZD0iYm9keV8xIiB3aWR0aD0iNzkzIiBoZWlnaHQ9IjExMjMiPjxkZWZzPjxjbGlwUGF0aCBpZD0iMSI+PHBhdGgg [rest of string was truncated]&quot;;.
+        /// </summary>
+        internal static string theory {
+            get {
+                return ResourceManager.GetString("theory", resourceCulture);
             }
         }
         

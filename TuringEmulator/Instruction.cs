@@ -42,6 +42,7 @@ namespace TuringEmulator
         /// </summary>
         [DataMember(Name = "IsStart")]
         public bool Start { get; set; } = false;
+
         public override string ToString()
         {
             string active = Active ? " (ACTIVE)" : "";

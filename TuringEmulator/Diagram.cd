@@ -1,0 +1,130 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1">
+  <Class Name="TuringEmulator.DataArray" Collapsed="true">
+    <Position X="2.75" Y="7.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AIAAAACAAABgAAAECBCQAAQAAAAAAgAAAABAAAAAgAA=</HashCode>
+      <FileName>DataArray.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="TuringEmulator.InputEditorForm" Collapsed="true">
+    <Position X="0.5" Y="5.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>ABACAAAAACAADAAAAACIBAACAAAAAAAAAAgAAAAQAAQ=</HashCode>
+      <FileName>InputEditor.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="TuringEmulator.Instruction">
+    <Position X="5.5" Y="4.25" Width="1.5" />
+    <AssociationLine Name="Operations" Type="TuringEmulator.Operation" FixedFromPoint="true" FixedToPoint="true">
+      <Path>
+        <Point X="7" Y="4.625" />
+        <Point X="8.25" Y="4.625" />
+        <Point X="8.25" Y="6" />
+      </Path>
+      <MemberNameLabel ManuallyPlaced="true">
+        <Position X="0.096" Y="1.115" />
+      </MemberNameLabel>
+    </AssociationLine>
+    <TypeIdentifier>
+      <HashCode>AAAAAAACACAAAAAEAAAAAAQAAAAAAAAgAAAAAAAAAAA=</HashCode>
+      <FileName>Instruction.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsCollectionAssociation>
+      <Property Name="Operations" />
+    </ShowAsCollectionAssociation>
+  </Class>
+  <Class Name="TuringEmulator.MainForm" Collapsed="true">
+    <Position X="0.5" Y="4.75" Width="1.5" />
+    <AssociationLine Name="currentState" Type="TuringEmulator.State" FixedFromPoint="true" FixedToPoint="true">
+      <Path>
+        <Point X="1.438" Y="4.75" />
+        <Point X="1.438" Y="4.188" />
+        <Point X="2.75" Y="4.188" />
+      </Path>
+      <MemberNameLabel ManuallyPlaced="true">
+        <Position X="0.146" Y="-0.266" />
+      </MemberNameLabel>
+    </AssociationLine>
+    <TypeIdentifier>
+      <HashCode>wEBRQgkOCKGI8LCIaACAWhZKhHOwhgALFAKiIYqoAnw=</HashCode>
+      <FileName>Main.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Field Name="currentState" />
+    </ShowAsAssociation>
+  </Class>
+  <Class Name="TuringEmulator.Operation">
+    <Position X="7.5" Y="6" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAEAAAAAAAAEACAAAAAAAAAgCAAABAAAAAAAAAA=</HashCode>
+      <FileName>Operation.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Property Name="Direction" />
+    </ShowAsAssociation>
+  </Class>
+  <Class Name="TuringEmulator.Program" Collapsed="true">
+    <Position X="0.5" Y="7.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAABAAAAAA=</HashCode>
+      <FileName>Program.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="TuringEmulator.State">
+    <Position X="2.75" Y="4" Width="1.5" />
+    <AssociationLine Name="Instructions" Type="TuringEmulator.Instruction" FixedToPoint="true">
+      <Path>
+        <Point X="4.25" Y="4.375" />
+        <Point X="5.5" Y="4.375" />
+      </Path>
+      <MemberNameLabel ManuallyPlaced="true">
+        <Position X="0.137" Y="-0.257" />
+      </MemberNameLabel>
+    </AssociationLine>
+    <AssociationLine Name="Data" Type="TuringEmulator.DataArray" FixedToPoint="true">
+      <Path>
+        <Point X="3.062" Y="6.584" />
+        <Point X="3.062" Y="7.75" />
+      </Path>
+      <MemberNameLabel ManuallyPlaced="true">
+        <Position X="-0.66" Y="0.087" />
+      </MemberNameLabel>
+    </AssociationLine>
+    <AssociationLine Name="StartData" Type="TuringEmulator.DataArray" FixedToPoint="true">
+      <Path>
+        <Point X="4" Y="6.584" />
+        <Point X="4" Y="7.75" />
+      </Path>
+      <MemberNameLabel ManuallyPlaced="true">
+        <Position X="0.015" Y="0.316" />
+      </MemberNameLabel>
+    </AssociationLine>
+    <TypeIdentifier>
+      <HashCode>AAAAAAAgAAAAAAAEAAAAAAAAAAQICBAAIAAAAEAAEAA=</HashCode>
+      <FileName>State.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Field Name="Data" />
+      <Field Name="StartData" />
+    </ShowAsAssociation>
+    <ShowAsCollectionAssociation>
+      <Field Name="Instructions" />
+    </ShowAsCollectionAssociation>
+  </Class>
+  <Class Name="TuringEmulator.WebView" Collapsed="true">
+    <Position X="0.5" Y="6.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>IAQAAAAAACAAAAAAAACAAAACAABAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>WebView.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Enum Name="TuringEmulator.Direction">
+    <Position X="5" Y="7" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAgAAAQAAAAAAAAAAAAAgAAAAAAAAAAA=</HashCode>
+      <FileName>Instruction.cs</FileName>
+    </TypeIdentifier>
+  </Enum>
+  <Font Name="Segoe UI" Size="9" />
+</ClassDiagram>

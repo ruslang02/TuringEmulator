@@ -1,0 +1,304 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+	</head>
+	<body>
+		<div class="pdf_holder">
+                        
+                        
+                        
+                        
+                        <h1>Машина
+Тьюринга</h1>
+<p>
+<b>Маши́на Тью́ринга (МТ)</b>&nbsp;— абстрактный
+исполнитель (абстрактная вычислительная
+машина). Была предложена Аланом
+Тьюрингом в 1936
+году для формализации понятия
+алгоритма.</p>
+<p>
+Машина Тьюринга является расширением
+конечного
+автомата и, согласно тезису
+Чёрча&nbsp;— Тьюринга, способна
+имитировать все другие исполнители (с
+помощью задания правил перехода),
+каким-либо образом реализующие процесс
+пошагового вычисления, в котором каждый
+шаг вычисления достаточно элементарен.</p>
+<h2>Устройство машины
+Тьюринга</h2>
+<p>
+В состав машины Тьюринга входит
+бесконечная в обе стороны <i>лента</i>
+(возможны машины Тьюринга, которые имеют
+несколько бесконечных лент), разделённая
+на ячейки, и <i>управляющее устройство</i>,
+способное находиться в одном из <i>множества
+состояний</i>. Число возможных состояний
+управляющего устройства конечно и точно
+задано.</p>
+<p>
+Управляющее устройство может перемещаться
+влево и вправо по ленте, читать и
+записывать в ячейки ленты символы
+некоторого конечного алфавита. Выделяется
+особый <i>пустой</i> символ, заполняющий
+все клетки ленты, кроме тех из них
+(конечного числа), на которых записаны
+входные данные.</p>
+<p>
+Управляющее устройство работает согласно
+<i>правилам перехода</i>, которые представляют
+алгоритм, <i>реализуемый</i> данной машиной
+Тьюринга. Каждое правило перехода
+предписывает машине, в зависимости от
+текущего состояния и наблюдаемого в
+текущей клетке символа, записать в эту
+клетку новый символ, перейти в новое
+состояние и переместиться на одну клетку
+влево или вправо. Некоторые состояния
+машины Тьюринга могут быть помечены
+как <i>терминальные</i>, и переход в любое
+из них означает конец работы, остановку
+алгоритма.</p>
+<p>
+Машина Тьюринга называется <i>детерминированной</i>,
+если каждой комбинации состояния и
+ленточного символа в таблице соответствует
+не более одного правила. Если существует
+пара «ленточный символ&nbsp;— состояние»,
+для которой существует 2 и более команд,
+такая машина Тьюринга называется
+<i>недетерминированной</i>.</p>
+<h2>Описание машины
+Тьюринга</h2>
+<p>
+Конкретная машина Тьюринга задаётся
+перечислением элементов множества букв
+алфавита A, множества состояний Q и
+набором правил, по которым работает
+машина. Они имеют вид: q<sub>i</sub>a<sub>j</sub>→q<sub>i1</sub>a<sub>j1</sub>d<sub>k</sub>
+(если головка находится в состоянии q<sub>i</sub>,
+а в обозреваемой ячейке записана буква
+a<sub>j</sub>, то головка переходит в состояние
+q<sub>i1</sub>, в ячейку вместо a<sub>j</sub>
+записывается a<sub>j1</sub>, головка делает
+движение d<sub>k</sub>, которое имеет три
+варианта: на ячейку влево (L), на ячейку
+вправо (R), остаться на месте (N)). Для
+каждой возможной конфигурации &lt;q<sub>i</sub>,
+a<sub>j</sub>&gt; имеется ровно одно правило.
+Правил нет только для заключительного
+состояния, попав в которое машина
+останавливается. Кроме того, необходимо
+указать конечное и начальное состояния,
+начальную конфигурацию на ленте и
+расположение головки машины.</p>
+<h2>Пример машины Тьюринга</h2>
+<p>
+Приведём пример МТ для умножения чисел
+в унарной
+системе счисления. Машина
+работает по следующему набору правил:</p>
+<center>
+	<table width="215" cellpadding="1" cellspacing="0">
+		<colgroup><col width="105">
+		<col width="105">
+		</colgroup><tbody><tr>
+			<td width="105">
+				<p align="center"><b>Набор
+				правил</b></p>
+			</td>
+			<td width="105">
+				<p align="center"><b>Набор
+				правил</b></p>
+			</td>
+		</tr>
+		<tr>
+			<td width="105">
+				<p>q<sub>0</sub>*→q<sub>0</sub>R</p>
+			</td>
+			<td width="105">
+				<p>q<sub>4</sub>a→q<sub>4</sub>aR</p>
+			</td>
+		</tr>
+		<tr>
+			<td width="105">
+				<p>q<sub>0</sub>1→q<sub>0</sub>R</p>
+			</td>
+			<td width="105">
+				<p>q<sub>4</sub>=→q<sub>4</sub>=R</p>
+			</td>
+		</tr>
+		<tr>
+			<td width="105">
+				<p>q<sub>0</sub>×→q<sub>1</sub>×R</p>
+			</td>
+			<td width="105">
+				<p>q<sub>4</sub>1→q<sub>4</sub>1R</p>
+			</td>
+		</tr>
+		<tr>
+			<td width="105">
+				<p>q<sub>1</sub>1→q<sub>2</sub>aR</p>
+			</td>
+			<td width="105">
+				<p>q<sub>4</sub>*→q<sub>5</sub>1R</p>
+			</td>
+		</tr>
+		<tr>
+			<td width="105">
+				<p>q<sub>2</sub>1→q<sub>2</sub>1L</p>
+			</td>
+			<td width="105">
+				<p>q<sub>5</sub>*→q<sub>2</sub>*L</p>
+			</td>
+		</tr>
+		<tr>
+			<td width="105">
+				<p>q<sub>2</sub>a→q<sub>2</sub>aL</p>
+			</td>
+			<td width="105">
+				<p>q<sub>6</sub>a→q<sub>6</sub>1R</p>
+			</td>
+		</tr>
+		<tr>
+			<td width="105">
+				<p>q<sub>2</sub>=→q<sub>2</sub>=L</p>
+			</td>
+			<td width="105">
+				<p>q<sub>6</sub>×→q<sub>7</sub>×R</p>
+			</td>
+		</tr>
+		<tr>
+			<td width="105">
+				<p>q<sub>2</sub>×→q<sub>3</sub>×L</p>
+			</td>
+			<td width="105">
+				<p>q<sub>7</sub>a→q<sub>7</sub>aR</p>
+			</td>
+		</tr>
+		<tr>
+			<td width="105">
+				<p>q<sub>3</sub>1 → q<sub>4</sub>aR</p>
+			</td>
+			<td width="105">
+				<p>q<sub>7</sub>1→q<sub>2</sub>aR</p>
+			</td>
+		</tr>
+		<tr>
+			<td width="105">
+				<p>q<sub>3</sub>a→q<sub>3</sub>aL</p>
+			</td>
+			<td width="105">
+				<p>q<sub>7</sub>=→q<sub>8</sub>=L</p>
+			</td>
+		</tr>
+		<tr>
+			<td width="105">
+				<p>q<sub>3</sub>*→q<sub>6</sub>*R</p>
+			</td>
+			<td width="105">
+				<p>q<sub>8</sub>a→q<sub>8</sub>1L</p>
+			</td>
+		</tr>
+		<tr>
+			<td width="105">
+				<p>q<sub>4</sub>×→q<sub>4</sub>×R</p>
+			</td>
+			<td width="105">
+				<p>q<sub>8</sub>×→q<sub>9</sub>H</p>
+			</td>
+		</tr>
+	</tbody></table>
+</center>
+<p>
+Умножим с помощью МТ 3 на 2 в единичной
+системе:</p>
+<p>
+<img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAkwAAALOCAMAAABswrwiAAADAFBMVEUAAAD///8AAP8gIP/M//9UVFQ8PDwgICD///8AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAD8A/sJIvdGAAABAHRSTlP///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////8AU/cHJQAAK/dJREFUeJztnYF6q6wSRU2be3j/N75/EzWAwAwywNbsdb5Taxo1JauAOplZHoQYscx+AeQ+vGT6d5b/nd7yKsTtdXpH39BUb5nOqnh6w6twlMlsT3eDMklQJjWUSYIyqaFMEpRJDWWSoExqKJMEZVJDmSQokxrKJEGZ1FAmCcqkhjJJUCY1lEmCMqmhTBKUSQ1lkqBMakBkcjsmu7METSbspqJMRSiTGhiZwiUQeDKFSyBkmV5/A/lXbt9Cr8N9Drh97/897j9/LeIHbRu6QiY2VVmm/466LKU+tUcLrcf0j++3kPfzdTV44mOSTGwqUabXT/87dmEHBgQttLyP6bzjB7+499j65xk90XRCoZeJTVWWaTvSku2+e7SQ930wQfC/ev18/OAcmdhUokzrqx375/Y5Znh8/w9r/fneWwcPWvbeapnYVHqZhv+5qVpoG1WgZPriprr2MOcOD4YPNHOfYW5EUykn4ANbqGpWuTXR/uAkmdhUFZcGxrVQ+nz386zy+e5nQ5NXdubSwBc3lfKi5cAWCs4xUhfYSlfiwu6+nRMXLb+4qTS3U3q3UHQsJGpvp3x3Uyllyu/AGLwWEh4I+e6mokxFKJMayiRBmdSAhKAAgxaCAgxlkqBMaiiTBGVSQ5kkKJMayiRBmdRQJgnKpIYySVAmNZRJgjKp2WVyJzm94VWgTGo2mdzzJMvZDa/C4SIz/+5yUCaJg0xsqhwORKafhm37vkl4Mtn/vkZ7xJDp5/XP29uS3Hn0021l6aoTmkz771tuq8wxoycvwR5bwZDp+fPzdmn7XRd/sR8q/Onn4a5dE5pM2+9bbqvnM/lo9OR91ealYcl0pmf6VpnseqZxMi1CF9h/mPv7Vd+/rv/TZQVomBvSVOVhbm8r/69zb6pnWqZhw9yS60C9J1jwE+4t+J13j9I9E8oEfFRTpXuXsK3+mjP469Rs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" name="Image1" align="bottom" width="588" height="718" border="0"></p>
+<p>
+В протоколе указаны начальное и конечное
+состояния МТ, начальная конфигурация
+на ленте и расположение головки машины
+(подчёркнутый символ).</p>
+<h2>Полнота по Тьюрингу</h2>
+Можно сказать, что машина Тьюринга
+представляет собой простейшую
+вычислительную машину с линейной
+памятью, которая согласно формальным
+правилам преобразует входные данные с
+помощью последовательности <i>элементарных
+действий</i>.</p>
+<p>
+Элементарность действий заключается
+в том, что действие меняет лишь небольшой
+кусочек данных в памяти (в случае машины
+Тьюринга&nbsp;— лишь одну ячейку), и число
+возможных действий конечно. Несмотря
+на простоту машины Тьюринга на ней можно
+вычислить всё, что можно вычислить на
+любой другой машине, осуществляющей
+вычисления с помощью последовательности
+элементарных действий. Это свойство
+называется <i>полнотой</i>.</p>
+<p>
+Один из естественных способов
+доказательства того, что алгоритмы
+вычисления, которые можно реализовать
+на одной машине, можно реализовать и на
+другой,&nbsp;— это имитация первой машины
+на второй.</p>
+<p>
+Имитация заключается в следующем. На
+вход второй машине подаётся описание
+программы (правил работы) первой машины
+<i>D</i> и входные данные <i>X</i>, которые
+должны были поступить на вход первой
+машины. Нужно описать такую программу
+(правила работы второй машины), чтобы в
+результате вычислений на выходе оказалось
+то же самое, что вернула бы первая машина,
+если бы получила на вход данные <i>X</i>.</p>
+<p>
+Как было сказано, на машине Тьюринга
+можно имитировать (с помощью задания
+правил перехода) все другие исполнители,
+каким-либо образом реализующие процесс
+пошагового вычисления, в котором каждый
+шаг вычисления достаточно элементарен.</p>
+<p>
+На машине Тьюринга можно имитировать
+машину
+Поста, нормальные
+алгоритмы Маркова и любую
+программу для обычных компьютеров,
+преобразующую входные данные в выходные
+по какому-либо алгоритму. В свою очередь,
+на различных абстрактных исполнителях
+можно имитировать Машину Тьюринга.
+Исполнители, для которых это возможно,
+называются <i>полными по Тьюрингу</i>
+(Turing complete).</p>
+<p>
+Есть программы для обычных компьютеров,
+имитирующие работу машины Тьюринга. Но
+следует отметить, что данная имитация
+неполная, так как в машине Тьюринга
+присутствует абстрактная бесконечная
+лента. Бесконечную ленту с данными
+невозможно в полной мере имитировать
+на компьютере с конечной памятью
+(суммарная память компьютера&nbsp;—
+оперативная память, жёсткие диски,
+различные внешние носители данных,
+регистры и кэш процессора и др.&nbsp;—
+может быть очень большой, но, тем не
+менее, всегда конечна).</p>
+
+                    </div>
+	</body>
+</html>

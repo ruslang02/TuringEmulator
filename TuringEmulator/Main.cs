@@ -334,14 +334,20 @@ namespace TuringEmulator
 
         private void HowToUseItem_Click(object sender, EventArgs e)
         {
-            new WebView().ShowDialog();
+            using (WebView form = new WebView())
+            {
+                form.LoadPage();
+                form.ShowDialog();
+            }
         }
 
         private void TheoryItem_Click(object sender, EventArgs e)
         {
-            WebView form = new WebView();
-            form.LoadTheory();
-            form.ShowDialog();
+            using (WebView form = new WebView())
+            {
+                form.LoadTheory();
+                form.ShowDialog();
+            }
         }
     }
 }

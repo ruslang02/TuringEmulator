@@ -102,6 +102,7 @@
     <EmbeddedResource Include="WebView.resx">
       <DependentUpon>WebView.cs</DependentUpon>
     </EmbeddedResource>
+    <None Include="Diagram.cd" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
@@ -160,6 +161,7 @@
   <ItemGroup>
     <Content Include="appicon.ico" />
     <Content Include="Resources\HowTo.html" />
+    <None Include="Resources\theory.html" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
